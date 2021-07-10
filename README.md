@@ -12,10 +12,9 @@ Image-Text matching using embeddings from CNN and gensim Doc2Vec
 ## Steps:
 
 #### 1. Generate tfidf text features and image features using DataProcessor.py, with following arguments:
-- path to the directory containing data files containing article data (in this git repository: data-science-project/code/data)
-- path to the directory containing images (folder should be crated and images downloaded, eg. data-science-project/code/images)
-- path to the directory where tfidf features will be saved as tfidf_data.npy (folder should be crated, eg. data-science-project/code/tfidf_features)
-- path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be crated, eg. data-science-project/code/image_features)
+- path to the directory containing data files containing article data (in this git repository: Image-Text-Matching_using_CNN-Doc2Vec/data)
+- path to the directory containing images (folder should be crated and images downloaded, eg. Image-Text-Matching_using_CNN-Doc2Vec/images)
+- path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be crated, eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as arguments locations.
 
@@ -25,11 +24,10 @@ Results will be saved in the given as arguments locations.
 
 Example usage: python2 doc2vec_vectors.py
 
-#### 3. Calculate results for similarity baseline using DataPredictor.py, with following arguments:
-- path to the directory where cosine similarity results will be saved (eg. data-science-project/code/data)
-- path to the directory containing images (eg. data-science-project/code/images)
-- path to the directory containing tfidf features (eg. data-science-project/code/tfidf_features)
-- path to the directory containing image features (eg. data-science-project/code/image_features)
+#### 3. Calculate results for similarity using DataPredictor.py, with following arguments:
+- path to the directory where cosine similarity results will be saved (eg. Image-Text-Matching_using_CNN-Doc2Vec/data)
+- path to the directory containing images (eg. Image-Text-Matching_using_CNN-Doc2Vec/images)
+- path to the directory containing image features (eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as argument location.
 
@@ -37,10 +35,10 @@ Results will be saved in the given as argument location.
 - run the file eng_text_b123.py with arguments : directory of batch01/ directory of batch02/ directory of batch03/ directory of Output 
 
 Example usage: python3 eng_text_b123.py 
--b1 "/home/user/SS2021/DS/DsPJ2021-Data/data/MediaEvalNewsImagesBatch01.tsv" 
--b2 "/home/user/SS2021/DS/DsPJ2021-Data/data/MediaEvalNewsImagesBatch02.tsv" 
--b3 "/home/user/SS2021/DS/DsPJ2021-Data/data/MediaEvalNewsImagesBatch03.tsv"
--o  "/home/user/SS2021/DS/DsPJ2021-Data/data/batch_01_02_03_google_texts.tsv"
+-b1 "Image-Text-Matching_using_CNN-Doc2Vec/data/MediaEvalNewsImagesBatch01.tsv" 
+-b2 "Image-Text-Matching_using_CNN-Doc2Vec/MediaEvalNewsImagesBatch02.tsv" 
+-b3 "Image-Text-Matching_using_CNN-Doc2Vec/MediaEvalNewsImagesBatch03.tsv"
+-o  "Image-Text-Matching_using_CNN-Doc2Vec/batch_01_02_03_google_texts.tsv"
 
 #### 5.Translating the titles of the articles (batch01+batch02+batch03+batch04) using deepl API:
 repeat the following steps for each batch :
@@ -51,9 +49,9 @@ repeat the following steps for each batch :
 
 results are saved at:   
 
--code/data/batch_01_02_03_deepl_titles.tsv
+-Image-Text-Matching_using_CNN-Doc2Vec/data/batch_01_02_03_deepl_titles.tsv
 
--code/data/batch_04_deepl_titles.tsv
+-Image-Text-Matching_using_CNN-Doc2Vec/data/batch_04_deepl_titles.tsv
 
 ### 6.Calculate metrics using DataEvaluation.py with following arguments:
 - path to directory with prediction  result and ground truth files 
