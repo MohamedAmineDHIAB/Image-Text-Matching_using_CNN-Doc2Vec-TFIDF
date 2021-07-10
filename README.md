@@ -12,6 +12,9 @@ Image-Text matching using embeddings from CNN and gensim Doc2Vec
 - numpy
 - sklearn
 - tensorflow
+- string
+- spacy
+- scipy
 
 ## Steps:
 
