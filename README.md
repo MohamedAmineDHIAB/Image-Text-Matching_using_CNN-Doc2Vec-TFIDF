@@ -13,7 +13,7 @@ Image-Text matching using embeddings from CNN and gensim Doc2Vec
 
 #### 1. Generate tfidf text features and image features using DataProcessor.py, with following arguments:
 - path to the directory containing data files containing article data (in this git repository: Image-Text-Matching_using_CNN-Doc2Vec/data)
-- path to the directory containing images (folder should be crated and images downloaded, eg. Image-Text-Matching_using_CNN-Doc2Vec/images)
+- path to the directory containing images (folder should be crated and images downloaded, eg. Image-Text-Matching_using_CNN-Doc2Vec/image-cache)
 - path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be crated, eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as arguments locations.
@@ -26,7 +26,7 @@ Example usage: python2 doc2vec_vectors.py
 
 #### 3. Calculate results for similarity using DataPredictor.py, with following arguments:
 - path to the directory where cosine similarity results will be saved (eg. Image-Text-Matching_using_CNN-Doc2Vec/data)
-- path to the directory containing images (eg. Image-Text-Matching_using_CNN-Doc2Vec/images)
+- path to the directory containing images (eg. Image-Text-Matching_using_CNN-Doc2Vec/image-cache)
 - path to the directory containing image features (eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as argument location.
