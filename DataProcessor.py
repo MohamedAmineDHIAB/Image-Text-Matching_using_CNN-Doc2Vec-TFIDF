@@ -30,10 +30,10 @@ Parsing the arguments:
 * directory with data
 * directory with images
 * directory with text features
-*     dst_image_features = "/home/gojourney/Uni/SS21/DS/DsPJ2021-Data/image_features"
+*     dst_image_features = "Image-Text-Matching_using_CNN-Doc2Vec/image_features"
 
 Example usage: 
-python3 DataProcessor.py -d "/home/gojourney/SS2021/DS/DsPJ2021-Data/data" -i "/home/gojourney/SS2021/DS/DsPJ2021-Data/images" -tf "/home/gojourney/SS2021/DS/DsPJ2021-Data/text_features"
+python3 DataProcessor.py -d "Image-Text-Matching_using_CNN-Doc2Vec/data" -i "Image-Text-Matching_using_CNN-Doc2Vec/image-cache" -tf "Image-Text-Matching_using_CNN-Doc2Vec/text_features"
 """
 def parse_arguments():
     global data_dir
