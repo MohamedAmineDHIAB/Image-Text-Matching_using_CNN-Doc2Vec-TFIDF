@@ -8,6 +8,10 @@ Image-Text matching using embeddings from CNN and gensim Doc2Vec
 - Python3
 - gensim : 'pip2 install gensim'
 - google_trans_new : 'pip3 install google-trans-new'
+- pandas
+- numpy
+- sklearn
+- tensorflow
 
 ## Steps:
 
