@@ -1,5 +1,5 @@
 # Image-Text-Matching_using_CNN-Doc2Vec
-This REPO is for finding a solution for an Image to article's Text matching problem using embeddings from CNN (VGG19, ResNet152V2, DenseNet201) and gensim Doc2Vec.
+&#x1F4D8; This REPO is for finding a solution for an Image to article's Text matching problem using embeddings from CNN (VGG19, ResNet152V2, DenseNet201) and gensim Doc2Vec.
 
 
 ## Requirements :
