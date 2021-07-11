@@ -4,17 +4,19 @@
 
 ## Requirements :
 
-- Python2
-- Python3
-- gensim : 'pip2 install gensim'
-- google_trans_new : 'pip3 install google-trans-new'
-- pandas
-- numpy
-- sklearn
-- tensorflow
-- string
-- spacy
-- scipy
+- Python2   :
+ - gensim
+
+- Python3   :
+ - google_trans_new : 'pip3 install google-trans-new'
+ - numpy
+ - pandas
+ - spacy
+ - argparse
+ - scipy
+ - sklearn
+ - tensorflow
+ - tqdm
 
 ## Steps:
 
