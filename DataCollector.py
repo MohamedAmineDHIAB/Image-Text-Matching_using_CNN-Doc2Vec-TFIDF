@@ -19,7 +19,7 @@ Parsing the arguments:
 - directory with data
 - directory with images
 
-Example usage: python3 DataCollector.py -d "/home/gojourney/SS2021/DS/DsPJ2021-Data/data" -i "/home/gojourney/SS2021/DS/DsPJ2021-Data/images"
+Example usage: python3 DataCollector.py -d "Image-Text-Matching_using_CNN-Doc2Vec/data" -i "Image-Text-Matching_using_CNN-Doc2Vec/image-cache"
 """
 def parse_arguments():
     global data_dir
@@ -94,11 +94,11 @@ if __name__ == "__main__":
 
     parse_arguments()
 
-    data_01, adata_01, idata_01 = get_train_data(path.join(data_dir, "01.tsv"), path.join(img_dir, "01"))
-    data_02, adata_02, idata_02 = get_train_data(path.join(data_dir, "02.tsv"), path.join(img_dir, "02"))
+    data_01, adata_01, idata_01 = get_train_data(path.join(data_dir, "MediaEvalNewsImagesBatch01.tsv"), path.join(img_dir, "img-2019-01"))
+    data_02, adata_02, idata_02 = get_train_data(path.join(data_dir, "MediaEvalNewsImagesBatch02.tsv"), path.join(img_dir, "img-2019-02"))
 
-    data_text, data_img = get_test_data(path.join(data_dir, "03_data.tsv"), path.join(data_dir, "03_label.tsv"), path.join(img_dir, "03"))
+    data_text, data_img = get_test_data(path.join(data_dir, "MediaEvalNewsImagesBatch03articles.tsv"), path.join(data_dir, "MediaEvalNewsImagesBatch03images.tsv"), path.join(img_dir, "img-2019-03"))
 
-    data, adata, idata = merge_train_data([path.join(data_dir, "01.tsv"), path.join(data_dir, "02.tsv")],
-                                          [path.join(img_dir, "01"), path.join(img_dir, "02")])
+    data, adata, idata = merge_train_data([path.join(data_dir, "MediaEvalNewsImagesBatch01.tsv"), path.join(data_dir, "MediaEvalNewsImagesBatch02.tsv")],
+                                          [path.join(img_dir, "img-2019-01"), path.join(img_dir, "img-2019-02")])
     save_image_ipaths(idata)
