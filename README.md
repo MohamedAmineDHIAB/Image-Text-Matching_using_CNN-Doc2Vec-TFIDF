@@ -6,27 +6,27 @@
 
 - Python2   :
 
- - gensim
+ * gensim
 
 - Python3   :
 
- - google_trans_new : 'pip3 install google-trans-new'
+ * google_trans_new : 'pip3 install google-trans-new'
  
- - numpy
+ * numpy
  
- - pandas
+ * pandas
  
- - spacy
+ * spacy
  
- - argparse
+ * argparse
  
- - scipy
+ * scipy
  
- - sklearn
+ * sklearn
  
- - tensorflow
+ * tensorflow
  
- - tqdm
+ * tqdm
  
 
 ## Steps:
