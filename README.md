@@ -23,7 +23,20 @@
 - path to the directory containing images (folder should be crated and images downloaded, eg. Image-Text-Matching_using_CNN-Doc2Vec/image-cache)
 - path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be created, eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
-Results will be saved in the given as arguments locations.
+Results (tfidf_data.npy and vgg_fc1_data.npy) will be saved in the given as arguments locations.
+Example usage: python3 DataProcessor.py -d "/Image-Text-Matching_using_CNN-Doc2Vec/data" -i "/Image-Text-Matching_using_CNN-Doc2Vec/image-cache" -tf "/Image-Text-Matching_using_CNN-Doc2Vec/text_features" -ti "/Image-Text-Matching_using_CNN-Doc2Vec/image_features"
+
+Image feature vectors should be placed in image_features directory and can be downloaded from:
+
+<a href="https://drive.google.com/file/d/1eNoMg-8rj8arNlnZkB0hCa7AyKxJfNTO/view?usp=sharing">Batch 01</a> 
+
+<a href="https://drive.google.com/file/d/1FCAyzPUj1Ot2FhgHyTCW0_oqY6XPKeQ0/view?usp=shari">Batch 02</a> ng
+
+<a href="https://drive.google.com/file/d/1vW9WKkdRVjAejCsvnSRFUj5o-h0EX8hl/view?usp=sharing">Batch 03</a> 
+
+Tfidf text features vectors should be placed in text_features directory and can be downloaded from:
+
+<a href="https://drive.google.com/file/d/1l7gEe_bnR-ypbN44Gq1F8VQQ_JMVriiT/view?usp=sharing">Tfidf text features</a>
 
 #### 2. Generate doc2vec feature vectors using doc2vec_vectors.py, in a following way:
 - download the doc2vec pretrained weights from the google drive link : https://drive.google.com/file/d/1813Css0589E6_SE-VJyW7GDaDiZNG2SR/view?usp=sharing and put the binary file in the folder code/data
