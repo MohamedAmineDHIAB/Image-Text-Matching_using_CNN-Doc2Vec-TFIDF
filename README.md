@@ -6,39 +6,26 @@
 <ul>
   <li>Python2
     <ul>
-      <li>Bananas</li>
-      <li>Apples</li>
-      <li>Pears</li>
+      <li>gensim</li>
     </ul>
   </li>
   <li>Python3
+    <ul>
+      <li>google_trans_new</li>
+      <li>numpy</li>
+      <li>pandas</li>
+      <li>spacy</li>
+      <li>argparse</li>
+      <li>scipy</li>
+      <li>sklearn</li>
+      <li>tensorflow</li>
+      <li>tqdm</li>
+    </ul>
   </li>
   
 </ul>
 
-- Python2   :
 
- * gensim
-
-- Python3   :
-
- * google_trans_new : 'pip3 install google-trans-new'
- 
- * numpy
- 
- * pandas
- 
- * spacy
- 
- * argparse
- 
- * scipy
- 
- * sklearn
- 
- * tensorflow
- 
- * tqdm
  
 
 ## Steps:
