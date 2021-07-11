@@ -32,6 +32,6 @@ for i in tqdm(range(n)):
     vecs[:,i]=m.infer_vector(tokenized_texts[i], alpha=start_alpha, steps=infer_epoch)
 
 #save embedding vectors of english titles in numpy file
-output_file="data/batch_01_02_03_titles_vectors.npy"
+output_file="text_features/batch_01_02_03_titles_vectors.npy"
 with open(output_file,'wb') as f :
     np.save(f, vecs)
