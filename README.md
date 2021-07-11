@@ -3,6 +3,18 @@
 
 
 ## Requirements :
+<ul>
+  <li>Python2
+    <ul>
+      <li>Bananas</li>
+      <li>Apples</li>
+      <li>Pears</li>
+    </ul>
+  </li>
+  <li>Python3
+  </li>
+  
+</ul>
 
 - Python2   :
 
