@@ -30,7 +30,7 @@ Image feature vectors should be placed in image_features directory and can be do
 
 <a href="https://drive.google.com/file/d/1eNoMg-8rj8arNlnZkB0hCa7AyKxJfNTO/view?usp=sharing">Batch 01</a> 
 
-<a href="https://drive.google.com/file/d/1FCAyzPUj1Ot2FhgHyTCW0_oqY6XPKeQ0/view?usp=shari">Batch 02</a> ng
+<a href="https://drive.google.com/file/d/1FCAyzPUj1Ot2FhgHyTCW0_oqY6XPKeQ0/view?usp=sharing">Batch 02</a>
 
 <a href="https://drive.google.com/file/d/1vW9WKkdRVjAejCsvnSRFUj5o-h0EX8hl/view?usp=sharing">Batch 03</a> 
 
