@@ -21,20 +21,20 @@ Image-Text matching using embeddings from CNN and gensim Doc2Vec
 #### 1. Generate tfidf text features and image features using DataProcessor.py, with following arguments:
 - path to the directory containing data files containing article data (in this git repository: Image-Text-Matching_using_CNN-Doc2Vec/data)
 - path to the directory containing images (folder should be crated and images downloaded, eg. Image-Text-Matching_using_CNN-Doc2Vec/image-cache)
-- path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be crated, eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
+- path to the directory where image features will be saved as vgg_fc1_data.npy (folder should be created, eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as arguments locations.
 
 #### 2. Generate doc2vec feature vectors using doc2vec_vectors.py, in a following way:
 - download the doc2vec pretrained weights from the google drive link : https://drive.google.com/file/d/1813Css0589E6_SE-VJyW7GDaDiZNG2SR/view?usp=sharing and put the binary file in the folder code/data
-- run the file doc2vec_vectors.py using python2 to get an array of dimension (300,13478) with 300 : a hyper parameter of the doc2vec model which corresponds to the embedding dimension and 13478 : number of articles in batches 01/02/03. The result is saved in numpy array in 'data/batch_01_02_03_titles_vectors.npy'
+- run the file doc2vec_vectors.py using python2 to get an array of dimension (300,13478) with 300 : a hyper parameter of the doc2vec model which corresponds to the embedding dimension and 13478 : number of articles in batches 01/02/03. The result is saved in numpy array in 'text_features/batch_01_02_03_titles_vectors.npy'
 
 Example usage: python2 doc2vec_vectors.py
 
 #### 3. Calculate results for similarity using DataPredictor.py, with following arguments:
 - path to the directory where cosine similarity results will be saved (eg. Image-Text-Matching_using_CNN-Doc2Vec/data)
 - path to the directory containing images (eg. Image-Text-Matching_using_CNN-Doc2Vec/image-cache)
-- path to the directory containing text features (eg. Image-Text-Matching_using_CNN-Doc2Vec/data/batch_01_02_03_titles_vectors.npy)
+- path to the directory containing text features (eg. Image-Text-Matching_using_CNN-Doc2Vec/text_features/batch_01_02_03_titles_vectors.npy)
 - path to the directory containing image features (eg. Image-Text-Matching_using_CNN-Doc2Vec/image_features)
 
 Results will be saved in the given as argument location.
