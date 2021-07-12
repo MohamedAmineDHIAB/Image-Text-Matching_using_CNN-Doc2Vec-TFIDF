@@ -96,10 +96,10 @@ Results will be saved in the given as argument location.
 
 ## The Metrics used in this Project are : 
 
-\begin{equation}MRR@N = 
-\frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left(\text { image } "i"\right)}
-\end{equation}
 
 \begin{equation} Accuracy@N = 
 \frac{1}{K} \sum_{i=1}^{K} \mathbbm{1}(\text { image "i" is in the top N) }
 \end{equation}
+
+<img src="https://latex.codecogs.com/gif.latex?
+\begin{equation}MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left(\text { image } "i"\right)}\end{equation}" /> 
