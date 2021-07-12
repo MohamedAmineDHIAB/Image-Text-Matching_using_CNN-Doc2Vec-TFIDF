@@ -97,7 +97,6 @@ Results will be saved in the given as argument location.
 ## The Metrics used in this Project are : 
 
 
-<p><span class="math display">\[Accuracy@N = 
-\frac{1}{K} \sum_{i=1}^{K} \mathbbm{1}(\text { image &quot;i&quot; is in the top N) }\]</span></p>
+<img src="https://latex.codecogs.com/png.latex?\LARGE&space;\centering&space;Accuracy@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\psi_N(\textbf{image}_i)" title="\LARGE \centering Accuracy@N = \frac{1}{K} \sum_{i=1}^{K} \psi_N(\textbf{image}_i)" />
 
 <img src="https://latex.codecogs.com/png.latex?\LARGE&space;MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(&space;\textbf{image}_i\right)}" title="\LARGE MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left( \textbf{image}_i\right)}" />
