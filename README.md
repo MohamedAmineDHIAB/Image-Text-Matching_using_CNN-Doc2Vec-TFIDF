@@ -101,4 +101,4 @@ Results will be saved in the given as argument location.
 \frac{1}{K} \sum_{i=1}^{K} \mathbbm{1}(\text { image "i" is in the top N) }
 \end{equation}
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\begin{equation}MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(\text&space;{&space;image&space;}&space;"i"\right)}\end{equation}" target="_blank"><img src="https://latex.codecogs.com/gif.latex?\begin{equation}MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(\text&space;{&space;image&space;}&space;"i"\right)}\end{equation}" title="\begin{equation}MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left(\text { image } "i"\right)}\end{equation}" /></a>
+<img src="https://latex.codecogs.com/gif.latex?\begin{equation}MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(\text&space;{&space;image&space;}&space;"i"\right)}\end{equation}" title="\begin{equation}MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left(\text { image } "i"\right)}\end{equation}" />
