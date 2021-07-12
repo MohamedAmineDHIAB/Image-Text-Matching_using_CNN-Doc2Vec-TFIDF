@@ -99,4 +99,8 @@ Results will be saved in the given as argument location.
 
 <img src="https://latex.codecogs.com/png.latex?\LARGE&space;\centering&space;Accuracy@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\psi_N(\textbf{image}_i)" title="\LARGE \centering Accuracy@N = \frac{1}{K} \sum_{i=1}^{K} \psi_N(\textbf{image}_i)" />
 
+For the first metric ACC@N , the internal accuracy term is equal to 1, if the true image lies within the number of N predictions, otherwise the term is equal to 0. It is calculated for each article and added together and then averaged over the total number of articles K .
+
 <img src="https://latex.codecogs.com/png.latex?\LARGE&space;MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(&space;\textbf{image}_i\right)}" title="\LARGE MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left( \textbf{image}_i\right)}" />
+
+The Mean Reciprocal Rank, which is a metric for evaluating ranked retrieved elements. Each prediction has a rank between 1 and N and the lower the rank the higher the score given to this prediction as a match by the model.  If the ground truth image is present in the retrieved list of size N then $\rho$ corresponds to it's rank. Otherwise, the internal term of the sum is set to 0 (the rank is inf).
