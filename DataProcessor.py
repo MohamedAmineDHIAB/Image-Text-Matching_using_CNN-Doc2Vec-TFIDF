@@ -75,17 +75,6 @@ def custom_tokenizer(text : str, remove_last : bool = True):
 
     return nlp_text
 
-def fit_bow(corpus : pd.DataFrame, test_corpus : pd.DataFrame = None, max_features : int = None):
-
-    bow_vectorizer = CountVectorizer(tokenizer = custom_tokenizer, ngram_range = (1,1), max_features = max_features)
-    bow_train_corpus = bow_vectorizer.fit_transform(corpus)
-
-    if test_corpus is not None:
-
-        bow_test_corpus = bow_vectorizer.transform(test_corpus)
-        return bow_vectorizer, bow_train_corpus, bow_test_corpus
-
-    return bow_vectorizer, bow_train_corpus
 
 def fit_tfidf(corpus : pd.DataFrame, test_corpus : pd.DataFrame = None, max_features : int = None):
 
@@ -225,8 +214,7 @@ if __name__ == "__main__":
     # Set Text-Feature Parameters:
     vector_size, epochs = 4096, 100
 
-    _, train_bow, test_bow = fit_bow(adata["text"], test_corpus = data_text["text"], max_features = vector_size)
-    save_results([train_bow, test_bow], dst_file_bow)
+    
 
     _, train_tfidf, test_tfidf = fit_tfidf(adata["text"], test_corpus = data_text["text"], max_features = vector_size)
     save_results([train_tfidf, test_tfidf], dst_file_tfidf)
