@@ -50,7 +50,7 @@ def random_baseline(adata : pd.DataFrame, idata: pd.DataFrame):
     adata["random_baseline"] = idata["iid"].sample(n=adata.shape[0]).values
     return adata
 
-def calculate_n_most_similar(vectors, target_vectors, n_similar = 10):
+def calculate_n_most_similar(vectors, target_vectors, n_similar = 100):
 
     distances = distance.cdist(np.array(list(vectors)), np.array(list(target_vectors)), "cosine")
     d = distances[0]
@@ -92,21 +92,14 @@ if __name__ == "__main__":
                                                         path.join(dst_text_features, 'vgg_fc1_data2.npy'),
                                                         path.join(dst_text_features, 'vgg_fc1_data3.npy')]
 
-    [dst_file_bow, dst_file_tfidf, dst_file_doc2vec] = [path.join(dst_text_features, 'bow_data.npy'), 
-                                                        path.join(dst_text_features, 'tfidf_data.npy'),
-                                                        path.join(dst_text_features, 'doc2vec_data.npy')]
 
-    data_text, data_img = dc.get_test_data(path.join(data_dir, "03_data.tsv"), path.join(data_dir, "03_label.tsv"), path.join(img_dir, "03"))
-    """
-    # Make random predictions:
-    random_pred = random_baseline(data_text, data_img)
-    print(random_pred)
-    """
+    dst_file_tfidf = path.join(dst_text_features, 'tfidf_data.npy')
 
+    data_text, data_img = dc.get_test_data(path.join(data_dir, "MediaEvalNewsImagesBatch03articles.tsv"), path.join(data_dir, "MediaEvalNewsImagesBatch03images.tsv"), path.join(img_dir, "img-2019-03"))
 
-    #Calculate similarity baseline based on tfidf/doc2vec
-    data, adata, idata = dc.merge_train_data([path.join(data_dir, "01.tsv"), path.join(data_dir, "02.tsv"), path.join(data_dir, "03.tsv")],
-                                             [path.join(img_dir, "01"), path.join(img_dir, "02"), path.join(img_dir, "03")])
+    #Calculate similarity baseline based on tfidf
+    data, adata, idata = dc.merge_train_data([path.join(data_dir, "MediaEvalNewsImagesBatch01.tsv"), path.join(data_dir, "MediaEvalNewsImagesBatch02.tsv")],
+                                             [path.join(img_dir, "img-2019-01"), path.join(img_dir, "img-2019-02")])
     
     result_tfidf = dp.load_results(dst_file_tfidf)
     
@@ -120,32 +113,22 @@ if __name__ == "__main__":
     test_iv_data = dp.load_results(dst_file_img03)
 
     #Make prediction based on cosine similarity
-    cosine_pred = cosine_similarity_baseline(data_text, data, iv_data, test_iv_data)
-    save_baseline_results(cosine_pred, path, 'cosine_results.csv', 'csv')
-    
+    cosine_pred = cosine_similarity_baseline(data_text, data, iv_data, test_iv_data, data_img, "tfidf_most_similar")
+    save_baseline_results(cosine_pred, path, 'cosine_results_de_100.csv', 'csv')
 
-    #result_tfidf = load_results(path.join(path,'eng_titles_vectors.npy'))
-    """
-    train = pd.read_csv(path.join(path,'train.csv'))
-    dev = pd.read_csv(path.join(path, 'dev.csv'))
-    test = pd.read_csv(path.join(path, 'test.csv'))
-    train_length = len(train) + len(dev)
-    test_length = len(test)
 
-    train_data = adata.iloc[0:train_length]
-    test_data = adata.iloc[train_length:]
-    train_data["tfidf"] = list(result_tfidf[0])[:train_length] #result_tfidf[0].T
-    test_data["tfidf"] = list(result_tfidf[0])[train_length:] #result_tfidf[0].T
+    adata["doc2vec"] = list(dp.load_results(path.join(data_dir,"doc2vec_batch01_02_titles_vectors.npy"))[0].T)
+    k = dp.load_results(path.join(dst_text_features, "doc2vec_batch03_titles_vectors.npy"))[0].T
+    data_text["doc2vec"] = list(k)
 
-    tfidf_most_similar, tfidf_cosine_similarity = calculate_most_similar(test_data["tfidf"], train_data["tfidf"], train_data["aid"])
-    test_data["tfidf_most_similar"], test_data["tfidf_cosine_similarity"] = tfidf_most_similar, tfidf_cosine_similarity
-    
-    dt = train.append(dev, ignore_index=True, sort=False)
-    itrain = (iv_data)[:train_length]
-    itest = (iv_data)[train_length:]
-    cosine_pred = cosine_similarity_baseline(test_data, dt, itrain, [itest], test, 100)
-    save_baseline_results(cosine_pred, path, 'cosine_results.csv', 'csv')
-    """
+    d2v_most_similar, d2v_cosine_similarity = calculate_n_most_similar(data_text["doc2vec"], adata["doc2vec"], adata["aid"])
+    data_text["doc2vec_most_similar"], data_text["doc2vec_cosine_similarity"] = d2v_most_similar, d2v_cosine_similarity
+
+        #Make prediction based on cosine similarity
+    cosine_pred = cosine_similarity_baseline(data_text, data, iv_data, test_iv_data, data_img, "doc2vec_cosine_similarity")
+    save_baseline_results(cosine_pred, path, 'cosine_results_eng_100.csv', 'csv')
+
+
 
 
 
