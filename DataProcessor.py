@@ -33,7 +33,7 @@ Parsing the arguments:
 *     dst_image_features = "Image-Text-Matching_using_CNN-Doc2Vec/image_features"
 
 Example usage: 
-python3 DataProcessor.py -d "Image-Text-Matching_using_CNN-Doc2Vec/data" -i "Image-Text-Matching_using_CNN-Doc2Vec/image-cache" -tf "Image-Text-Matching_using_CNN-Doc2Vec/text_features"
+python3 DataProcessor.py -d "Image-Text-Matching_using_CNN-Doc2Vec/data" -i "Image-Text-Matching_using_CNN-Doc2Vec/image-cache" -tf "Image-Text-Matching_using_CNN-Doc2Vec/text_features" -ti "Image-Text-Matching_using_CNN-Doc2Vec/image_features" 
 """
 def parse_arguments():
     global data_dir
