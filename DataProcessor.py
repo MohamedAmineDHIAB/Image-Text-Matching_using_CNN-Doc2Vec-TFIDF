@@ -113,8 +113,7 @@ from tensorflow.keras.models import Model
 from tensorflow.keras.preprocessing.image import load_img
 
 from tensorflow.keras.applications import VGG19
-from tensorflow.keras.applications import ResNet152V2
-from tensorflow.keras.applications import DenseNet201
+
 
 def load_images(idata, IMG_SIZE = (224, 224)):
 
@@ -123,7 +122,7 @@ def load_images(idata, IMG_SIZE = (224, 224)):
 
     return np.array(images)
 
-def transform_cnn(images, pretrained_model = DenseNet201, include_top = True, layer = None, batch_size = None): 
+def transform_cnn(images, pretrained_model, include_top = True, layer = None, batch_size = None): 
 
     model = pretrained_model(include_top = include_top, weights = 'imagenet')
 
@@ -192,13 +191,12 @@ if __name__ == "__main__":
 
     data_text, data_img = dc.get_test_data(path.join(data_dir, "03_data.tsv"), path.join(data_dir, "03_label.tsv"), path.join(img_dir, "03"))
 
-    [dst_file_bow, dst_file_tfidf] = [path.join(dst_text_features, 'bow_data.npy'), 
-                                                        path.join(dst_text_features, 'tfidf_data.npy')]
+    dst_file_tfidf = path.join(dst_text_features, 'tfidf_data.npy')
 
     
-    # Generate Image-Features (VGG19, ResNet152, DenseNet201) for 'Training'-data:
+    # Generate Image-Features (VGG19) for 'Training'-data:
     
-    [dst_file_vgg_fc1] = [path.join(dst_image_features, 'vgg_fc1_data.npy')]
+    dst_file_vgg_fc1 = path.join(dst_image_features, 'vgg_fc1_data.npy')
 
     print("Start: Load Images.")
     images = load_images(idata)
@@ -209,7 +207,7 @@ if __name__ == "__main__":
     print("VGG19 - 1")
 
 
-    # Generate Text-Features (BOW, TFIDF) for 'Training' and 'Test'-data:
+    # Generate Text-Features (TFIDF) for 'Training' and 'Test'-data:
        
     # Set Text-Feature Parameters:
     vector_size, epochs = 4096, 100
