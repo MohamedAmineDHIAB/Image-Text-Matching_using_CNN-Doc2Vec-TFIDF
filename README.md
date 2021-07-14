@@ -59,7 +59,7 @@ Example usage: python3 eng_text_b123.py
 -b3 "Image-Text-Matching_using_CNN-Doc2Vec/MediaEvalNewsImagesBatch03.tsv"
 -o  "Image-Text-Matching_using_CNN-Doc2Vec/batch_01_02_03_google_texts.tsv"
 
-#### 3.Translating the titles of the articles (batch01+batch02+batch03+batch04) using deepl API:
+#### 3.Translating the titles of the articles (batch01+batch02+batch03) using deepl API:
 repeat the following steps for each batch :
 
 - import the titles alongside with the aid (for batch1/2/3) or articleID (for batch4) in one txt file 
@@ -70,7 +70,6 @@ results are saved at:
 
 -Image-Text-Matching_using_CNN-Doc2Vec/data/batch_01_02_03_deepl_titles.tsv
 
--Image-Text-Matching_using_CNN-Doc2Vec/data/batch_04_deepl_titles.tsv
 
 #### 4. Generate doc2vec feature vectors using doc2vec_vectors.py, in a following way:
 - download the doc2vec pretrained weights from the google drive link : https://drive.google.com/file/d/1813Css0589E6_SE-VJyW7GDaDiZNG2SR/view?usp=sharing and put the binary file in the folder code/data
