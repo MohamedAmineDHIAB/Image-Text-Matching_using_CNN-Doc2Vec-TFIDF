@@ -103,3 +103,14 @@ For the first metric ACC@N , the internal accuracy term is equal to 1, if the tr
 <img src="https://latex.codecogs.com/png.latex?\LARGE&space;MRR@N&space;=&space;\frac{1}{K}&space;\sum_{i=1}^{K}&space;\frac{1}{\rho\left(&space;\textbf{image}_i\right)}" title="\LARGE MRR@N = \frac{1}{K} \sum_{i=1}^{K} \frac{1}{\rho\left( \textbf{image}_i\right)}" />
 
 The Mean Reciprocal Rank, which is a metric for evaluating ranked retrieved elements. Each prediction has a rank between 1 and N and the lower the rank the higher the score given to this prediction as a match by the model.  If the ground truth image is present in the retrieved list of size N then <img src="https://latex.codecogs.com/png.latex?\dpi{70}&space;\LARGE&space;\rho" title="\LARGE \rho" /> corresponds to it's rank. Otherwise, the internal term of the sum is set to 0 (the rank is inf).
+
+This is a summary for how the matching is done using English articles titles :
+
+
+![image](https://user-images.githubusercontent.com/85687148/126042581-8e336a48-a6f5-4640-bfaa-72445cebd857.png)
+
+And this is a summary for how the matching is done using german articles texts :
+
+![image](https://user-images.githubusercontent.com/85687148/126042641-ef4a35a5-8703-4a14-aa27-c3ae0588a682.png)
+
+
