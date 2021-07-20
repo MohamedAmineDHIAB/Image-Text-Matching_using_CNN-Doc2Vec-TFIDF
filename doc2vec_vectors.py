@@ -44,7 +44,7 @@ if __name__ == "__main__":
     m = g.Doc2Vec.load(model)
     for file in [b12_eng, b3_eng]:
 
-        df = pd.read_csv('data/batch_01_02_03_deepl_titles.tsv',
+        df = pd.read_csv('./data/'+file,
                          sep='\t',
                          encoding='utf-8')
         texts_list = df.loc[:, 'deepl_title'].tolist()
