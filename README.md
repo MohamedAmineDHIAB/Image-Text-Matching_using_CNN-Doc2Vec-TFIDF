@@ -74,9 +74,10 @@ results are saved at:
 
 #### 4. Generate doc2vec feature vectors using doc2vec_vectors.py, in a following way:
 - download the doc2vec pretrained weights from the google drive link : https://drive.google.com/file/d/1813Css0589E6_SE-VJyW7GDaDiZNG2SR/view?usp=sharing and put the binary file in the folder code/data
-- run the file doc2vec_vectors.py using python2 to get an array of dimension (300,13478) with 300 : a hyper parameter of the doc2vec model which corresponds to the embedding dimension and 13478 : number of articles in batches 01/02/03. The result is saved in numpy array in 'text_features/batch_01_02_03_titles_vectors.npy'
+- run the file doc2vec_vectors.py using python2 to get two arrays of embedding vectors each of a dimension 300 (a hyper parameter of the doc2vec model) . The number of these vectors is equal to the number of articles in the specified batch.
+-  results are saved in 2 numpy arrays in 'text_features/batch_01_02_titles_vectors.npy' and 'text_features/batch_03_titles_vectors.npy'
 
-Example usage: python2 doc2vec_vectors.py
+Example usage: python2 doc2vec_vectors.py -b12 batch_01_02_deepl_titles.tsv  -b3 batch03_deepl_titles.tsv -tf Image-Text-Matching_using_CNN-Doc2Vec/text_features/
 
 #### 5. Calculate results for similarity using DataPredictor.py, with following arguments:
 - path to the directory where cosine similarity results will be saved (eg. Image-Text-Matching_using_CNN-Doc2Vec/data)
