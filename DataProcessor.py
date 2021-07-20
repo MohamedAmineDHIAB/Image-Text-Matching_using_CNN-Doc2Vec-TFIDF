@@ -186,10 +186,10 @@ def load_results_append(results, dst : str):
 if __name__ == "__main__":
     parse_arguments()
 
-    data, adata, idata = dc.merge_train_data([path.join(data_dir, "01.tsv"), path.join(data_dir, "02.tsv")],
-                                             [path.join(img_dir, "01"), path.join(img_dir, "02")])
+    data, adata, idata = dc.merge_train_data([path.join(data_dir, "MediaEvalNewsImagesBatch01.tsv"), path.join(data_dir, "02.tsv")],
+                                             [path.join(img_dir, "img-2019-01"), path.join(img_dir, "img-2019-02")])
 
-    data_text, data_img = dc.get_test_data(path.join(data_dir, "03_data.tsv"), path.join(data_dir, "03_label.tsv"), path.join(img_dir, "03"))
+    data_text, data_img = dc.get_test_data(path.join(data_dir, "MediaEvalNewsImagesBatch03articles.tsv"), path.join(data_dir, "MediaEvalNewsImagesBatch03images.tsv"), path.join(img_dir, "img-2019-03"))
 
     dst_file_tfidf = path.join(dst_text_features, 'tfidf_data.npy')
 
