@@ -108,11 +108,19 @@ The Mean Reciprocal Rank, which is a metric for evaluating ranked retrieved elem
 
 This is a summary for how the matching is done using English articles titles :
 
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/85687148/126042581-8e336a48-a6f5-4640-bfaa-72445cebd857.png">
+</p>
 
-![image](https://user-images.githubusercontent.com/85687148/126042581-8e336a48-a6f5-4640-bfaa-72445cebd857.png)
+
 
 And this is a summary for how the matching is done using german articles texts :
 
-![image](https://user-images.githubusercontent.com/85687148/126042641-ef4a35a5-8703-4a14-aa27-c3ae0588a682.png)
+
+<p align="center">
+  <img width="700" height="500" src="https://user-images.githubusercontent.com/85687148/126042641-ef4a35a5-8703-4a14-aa27-c3ae0588a682.png">
+</p>
+
+
 
 
